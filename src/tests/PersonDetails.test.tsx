@@ -33,7 +33,7 @@ describe("<PersonDetails />", () => {
     return (
       <MemoryRouter
         initialEntries={[
-          { pathname: "/personDetails", state: { person: person } },
+          { pathname: "/person-details", state: { person: person } },
         ]}
       >
         <PersonDetails />

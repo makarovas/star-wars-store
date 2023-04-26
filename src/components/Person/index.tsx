@@ -3,7 +3,7 @@ import { IPerson } from "../../types";
 
 const Person = ({ person }: IPerson) => (
   <div className="card">
-    <Link to={{ pathname: "/personDetails" }} state={{ ...person }}>
+    <Link to={{ pathname: "/person-details" }} state={{ ...person }}>
       <h3 data-testid="name">{person.name}</h3>
     </Link>
   </div>
