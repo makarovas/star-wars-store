@@ -1,6 +1,4 @@
-type ISearchBar = {
-  handleTextInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-};
+import { ISearchBar } from "../../types";
 
 const SearchBar = ({ handleTextInputChange }: ISearchBar) => (
   <div id="search-container">

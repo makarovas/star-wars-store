@@ -68,3 +68,24 @@ export interface Error {
   message: string;
   stack?: string;
 }
+
+export type IPeople = {
+  people: PersonProp[];
+  handleTextInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+export type IPerson = {
+  person: PersonProp;
+};
+
+export type ISearchBar = {
+  handleTextInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+export type IFilmContainer = {
+  filmsUrl: string
+}
+
+export type ISpeciesContainer = {
+  speciesUrl: string;
+};

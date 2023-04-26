@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
-import { PersonProp } from "../../types";
+import { IPerson } from "../../types";
 
-type IPerson = {
-  person: PersonProp;
-};
 const Person = ({ person }: IPerson) => (
   <div className="card">
     <Link to={{ pathname: "/personDetails" }} state={{ ...person }}>

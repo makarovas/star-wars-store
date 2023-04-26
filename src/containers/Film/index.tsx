@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { getFilmData } from "../../api";
 import Film from "../../components/Film";
+import { IFilmContainer } from "../../types";
 
-const FilmContainer = ({ filmsUrl }: { filmsUrl: string }) => {
+const FilmContainer = ({ filmsUrl }: IFilmContainer) => {
   const [filmName, setFilmName] = useState<string>("");
 
   useEffect(() => {

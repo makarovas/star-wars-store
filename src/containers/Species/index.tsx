@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react";
 import { getSpeciesData } from "../../api";
 import Species from "../../components/Species";
+import { ISpeciesContainer } from "../../types";
 
-export type ISpeciesContainer = {
-  speciesUrl: string;
-};
-
-const SpeciesContainer = ({ speciesUrl }: { speciesUrl: string }) => {
+const SpeciesContainer = ({ speciesUrl }: ISpeciesContainer) => {
   const [speciesName, setSpeciesName] = useState<string>("");
 
   useEffect(() => {

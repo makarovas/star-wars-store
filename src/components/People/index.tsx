@@ -1,11 +1,6 @@
 import SearchBar from "../SearchBar";
 import Person from "../Person";
-import { PersonProp } from "../../types";
-
-type IPeople = {
-  people: PersonProp[];
-  handleTextInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-};
+import { IPeople } from "../../types";
 
 const People = ({ people, handleTextInputChange }: IPeople) => (
   <div className="char-film-container">

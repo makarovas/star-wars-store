@@ -1,4 +1,4 @@
-import { ISpeciesContainer } from "../../containers/Species";
+import { ISpeciesContainer } from "../../types";
 
 const Species = ({ speciesUrl }: ISpeciesContainer) => (
   <span>{speciesUrl}</span>
