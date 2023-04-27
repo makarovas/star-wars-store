@@ -71,7 +71,7 @@ export interface Error {
 
 export type IPeople = {
   people: PersonProp[];
-  handleTextInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  loadMore: () => void;
 };
 
 export type IPerson = {
@@ -83,8 +83,8 @@ export type ISearchBar = {
 };
 
 export type IFilmContainer = {
-  filmsUrl: string
-}
+  filmsUrl: string;
+};
 
 export type ISpeciesContainer = {
   speciesUrl: string;

@@ -26,11 +26,11 @@ export const peopleSlice = createSlice({
   },
   reducers: {
     people: (state, action) => {
-      state.value = action.payload;
+      state.value = [state.value, ...action.payload];
     },
   },
 });
 
-export const { people: peopleActions } = peopleSlice.actions;
+export const { people: peopleLoadDataAction } = peopleSlice.actions;
 
 export default peopleSlice.reducer;

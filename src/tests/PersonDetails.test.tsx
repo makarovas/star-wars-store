@@ -32,9 +32,7 @@ describe("<PersonDetails />", () => {
   const renderPersonDetailsComponent = () => {
     return (
       <MemoryRouter
-        initialEntries={[
-          { pathname: "/person-details", state: { person: person } },
-        ]}
+        initialEntries={[{ pathname: "/person-details", state: { person } }]}
       >
         <PersonDetails />
       </MemoryRouter>

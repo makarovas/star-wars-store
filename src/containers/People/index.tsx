@@ -1,33 +1,29 @@
 import React, { useEffect, useState } from "react";
-import { peopleActions } from "../../redux/peopleSlice";
+import { peopleLoadDataAction } from "../../redux/peopleSlice";
 import { getPeopleData } from "../../api";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import People from "../../components/People";
+import { PEOPLE } from "../../api/constants";
+import { increasePageValueAction } from "../../redux/paginationSlice";
 
 const PeopleContainer = () => {
-  const people = useAppSelector((state) => state.people.value);
-  const dispatch = useAppDispatch();
-  const [searchValue, setSearchValue] = useState<string>("");
+  const getSelectedPeople = useAppSelector((state) => state.people.value);
+  const getSelectedPageCount = useAppSelector((state) => state.pagination.page);
 
-  const handleTextInputChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setSearchValue(event.target.value);
-  };
+  const dispatch = useAppDispatch();
+  const loadMore = () => dispatch(increasePageValueAction());
 
   useEffect(() => {
-    async function getPeople() {
-      const personsData = await getPeopleData(
-        `${process.env.REACT_APP_API_URL}/people/?search=${searchValue}`
+    async function getLoadData() {
+      const { results } = await getPeopleData(
+        `${process.env.REACT_APP_API_URL}/${PEOPLE}/?page=${getSelectedPageCount}`
       );
-      dispatch(peopleActions(personsData.results));
+      dispatch(peopleLoadDataAction(results));
     }
-    getPeople();
-  }, [searchValue, dispatch]);
+    getLoadData();
+  }, [dispatch, getSelectedPageCount]);
 
-  return (
-    <People people={people} handleTextInputChange={handleTextInputChange} />
-  );
+  return <People people={getSelectedPeople} loadMore={loadMore} />;
 };
 
 export default PeopleContainer;
