@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { peopleActions } from "../../store/peopleSlice";
+import { peopleActions } from "../../redux/peopleSlice";
 import { getPeopleData } from "../../api";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import People from "../../components/People";
