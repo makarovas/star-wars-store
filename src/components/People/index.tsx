@@ -2,12 +2,13 @@ import Person from "../Person";
 import { IPeople } from "../../types";
 import SearchBar from "../../containers/SearchBar";
 
-const People = ({ people, loadMore }: IPeople) => (
+const People = ({ people, loadMore, loading }: IPeople) => (
   <div className="char-film-container">
     <div>
       <h2>Star Wars People</h2>
       <SearchBar />
       <div>
+        {loading && <span>Loading</span>}
         {people.map((person, i) => (
           <Person person={person} key={i} />
         ))}

@@ -72,6 +72,7 @@ export interface Error {
 export type IPeople = {
   people: PersonProp[];
   loadMore: () => void;
+  loading?: boolean;
 };
 
 export type IPerson = {

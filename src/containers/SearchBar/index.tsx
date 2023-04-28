@@ -20,18 +20,15 @@ const SearchBarContainer = () => {
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     setSearchValue(event.target.value);
+    // async function getPeople() {
+    //   const { results } = await getPeopleData(
+    //     `${process.env.REACT_APP_API_URL}/people/?search=${searchValue}`
+    //   );
+    //   dispatch(peopleLoadDataAction(results));
+    // }
+    // getPeople();
   };
   const debouncedHandleTextInputChange = debounce(handleTextInputChange, 500);
-
-  // useEffect(() => {
-  //   async function getPeople() {
-  //     const { results } = await getPeopleData(
-  //       `${process.env.REACT_APP_API_URL}/people/?search=${searchValue}`
-  //     );
-  //     dispatch(peopleLoadDataAction(results));
-  //   }
-  //   getPeople();
-  // }, [searchValue, dispatch]);
 
   return <SearchBar handleTextInputChange={debouncedHandleTextInputChange} />;
 };

@@ -26,11 +26,15 @@ export const peopleSlice = createSlice({
   },
   reducers: {
     people: (state, action) => {
+      state.value = [...state.value, ...action.payload];
+    },
+    search: (state, action) => {
       state.value = [state.value, ...action.payload];
     },
   },
 });
 
-export const { people: peopleLoadDataAction } = peopleSlice.actions;
+export const { people: peopleLoadDataAction, search: searchLoadDataAction } =
+  peopleSlice.actions;
 
 export default peopleSlice.reducer;
