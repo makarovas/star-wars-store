@@ -26,7 +26,7 @@ export const peopleSlice = createSlice({
   },
   reducers: {
     people: (state, action) => {
-      state.value = [...state.value, ...action.payload];
+      state.value = [state.value, ...action.payload];
     },
     search: (state, action) => {
       state.value = [state.value, ...action.payload];
